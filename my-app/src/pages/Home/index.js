@@ -7,20 +7,34 @@ import MyList from "./compoents/List";
 import "./index.css";
 
 async function fetchDta(setData){
-//  const res = await  fetch(API_GET_DATA , {
-// method : "GET",
-// headers :{'Content-type' : 'application/json'}
-//  })
-const res = await fetch(API_GET_DATA)
- const {data} = await res.json()
-console.log(data)
-setData(data)
+ const res = await  fetch(API_GET_DATA , {
+method : "GET",
+headers :{'Content-type' : 'application/json'}
+ })
+//const res = await fetch(API_GET_DATA)
+ const resData = await res.json()
+console.log(resData)
+setData(resData)
 }
+
+async function fetchSetData(data){
+  const resData = JSON.stringify(data)
+  console.log("[PUT]resData : "+resData)
+  await  fetch(API_GET_DATA , {
+ method : "PUT",
+ headers :{'Content-type' : 'application/json'},
+ body : resData
+  })
+ }
+ 
 
 
 const Home = () => {
   const [data, setData] = useState([]);
 
+  useEffect(()=>{
+    fetchSetData(data)
+  },[data])
 
   //data更動後就會觸發方法 渲染畫面時也會執行一次
 useEffect(()=>{
