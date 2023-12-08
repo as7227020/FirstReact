@@ -49,7 +49,7 @@ const Home = () => {
   //data更動後就會觸發方法 渲染畫面時也會執行一次
 useEffect(()=>{
 //data更動時要做的回應
-window.alert("新增成功!");
+//window.alert("新增成功!");
 //綁定時
 fetchDta(setData)
 // return () =>{//取消綁定/清除時
