@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {v4} from 'uuid'
 
-const Edit = ({ addData }) => {
+const Edit = ({ addData, subittingStatus}) => { //index.js 在Edit內所設定的
   //記事
   const [note, setNote] = useState("");
   function NoteChange(e) {
@@ -20,6 +20,7 @@ const Edit = ({ addData }) => {
   }
   console.log(note, myDate, myTime);
   function AddItem() {
+    subittingStatus.current = true;
     addData(function (prevData) {
       return [
         {

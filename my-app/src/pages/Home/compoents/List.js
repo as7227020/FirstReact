@@ -1,6 +1,6 @@
 import MyItem from "./MyItem";
 
-const List = ({ listData, deleteData }) => {
+const List = ({ listData, deleteData ,subittingStatus}) => {
   console.log("listData", listData);
 
   return (
@@ -8,13 +8,14 @@ const List = ({ listData, deleteData }) => {
       {listData.map((item) => {
         const { note, myDate, myTime, id } = item;
         return (
-          <MyItem
+          <MyItem //Porpo
             key={id}
             id={id}
             note={note}
             myDate={myDate}
             myTime={myTime}
             deleteData={deleteData}
+            subittingStatus={subittingStatus}
           />
         );
       })}
