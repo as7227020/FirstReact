@@ -46,10 +46,10 @@ const Home = () => {
    .then(data => subittingStatus.current = false)//data更新完後變成false, data變更(新增/刪除)時會先設成true
   },[data])
 
-  //data更動後就會觸發方法 渲染畫面時也會執行一次
+  //[]內更動就會觸發方法 以及渲染畫面後時也會執行一次
 useEffect(()=>{
 //data更動時要做的回應
-window.alert("新增成功!");
+//window.alert("新增成功!");
 //綁定時
 fetchDta(setData)
 // return () =>{//取消綁定/清除時
