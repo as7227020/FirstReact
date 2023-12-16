@@ -1,0 +1,27 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  nav {
+    font-size: 2em;
+    margin-top: 50px;
+  }
+  
+  nav span {
+    cursor: pointer;
+  }
+  
+  nav span a {
+    color: #1a0f0f;
+  }
+  
+  nav span a:hover {
+    color: rgb(197, 23, 110);
+  }
+  
+  .active {
+    text-decoration:dashed;
+  }
